@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Mitolyn - The Revolutionary Solution for Optimal Health. Boost your energy, enhance focus, and improve overall well-being naturally.">
+    <meta property="og:url" content="https://mitolyn.callinow.tech">
+    <title>Mitolyn - Natural Health Enhancement Formula | Official Site</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="canonical" href="https://mitolyn.callinow.tech">
+    
+    <style>
+        :root {
+            --primary: #3a86ff;
+            --secondary: #ff006e;
+            --accent: #8338ec;
+            --dark: #1d3557;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+        }
+        
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+        }
+        
+        .hero {
+            background: linear-gradient(to right, #ffffff 0%, #e6f7ff 100%);
+            padding: 4rem 1.5rem;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .hero-image {
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .benefit-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            background: white;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            background: white;
+            border: 2px solid #eaeaea;
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+        }
+        
+        .pricing-card.popular:before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 15px;
+            right: -35px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 35px;
+            transform: rotate(45deg);
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(58, 134, 255, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .guarantee-badge {
+            background: var(--secondary);
+            color: white;
+            border-radius: 50px;
+            padding: 8px 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .countdown {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 10px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        
+        .countdown-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding-top: 1rem;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(58, 134, 255, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(58, 134, 255, 0.6);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #d8005f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 0, 110, 0.4);
+        }
+        
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(29, 53, 87, 0.95);
+            color: white;
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+        
+        .floating-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: pulse 1.5s infinite;
+        }
+        
+        .ingredient {
+            display: flex;
+            margin-bottom: 1.5rem;
+            align-items: center;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 1.5rem;
+        }
+        
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                <img src="https://mitolyn.com/assets/images/logo-color.png" alt="Mitolyn Logo" width="150">
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="#benefits">Benefits</a>
+                <a class="navbar-item" href="#how-it-works">How It Works</a>
+                <a class="navbar-item" href="#ingredients">Ingredients</a>
+                <a class="navbar-item" href="#testimonials">Results</a>
+                <a class="navbar-item" href="#pricing">Pricing</a>
+                <a class="navbar-item" href="#faq">FAQ</a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a href="#pricing" class="button is-primary">
+                            <strong>Order Now</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-6">
+                    <h1 class="title is-1 has-text-weight-bold">
+                        Unleash Your Body's <span class="has-text-primary">Full Potential</span> with Mitolyn
+                    </h1>
+                    <p class="subtitle is-4">
+                        The Revolutionary Formula That Boosts Energy, Enhances Focus, and Optimizes Cellular Health
+                    </p>
+                    <ul class="mb-5">
+                        <li class="mb-2"><i class="fas fa-check-circle has-text-primary"></i> Naturally increases energy levels</li>
+                        <li class="mb-2"><i class="fas fa-check-circle has-text-primary"></i> Enhances mental clarity and focus</li>
+                        <li class="mb-2"><i class="fas fa-check-circle has-text-primary"></i> Supports cellular rejuvenation</li>
+                        <li class="mb-2"><i class="fas fa-check-circle has-text-primary"></i> 100% natural ingredients</li>
+                    </ul>
+                    <div class="guarantee-badge">
+                        <i class="fas fa-shield-alt"></i> 90-Day Money-Back Guarantee
+                    </div>
+                    <div class="mt-5">
+                        <a href="#pricing" class="btn-primary">Get Started Today</a>
+                        <p class="mt-2"><small>Join 15,432+ satisfied customers who transformed their health</small></p>
+                    </div>
+                </div>
+                <div class="column is-6 has-text-centered">
+                    <div class="hero-image">
+                        <img src="https://mitolyn.com/assets/images/full-product.png" alt="Mitolyn Product" style="max-height: 450px;">
+                        <div class="floating-badge">
+                            -50%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="section py-6">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered section-title">Experience Life-Changing Benefits</h2>
+            <div class="columns is-multiline">
+                <div class="column is-4">
+                    <div class="benefit-card has-text-centered p-5">
+                        <div class="icon is-large has-text-primary mb-4">
+                            <i class="fas fa-bolt fa-3x"></i>
+                        </div>
+                        <h3 class="title is-4">Unstoppable Energy</h3>
+                        <p>Feel energized from morning to night without jitters or crashes. Mitolyn provides sustained, natural energy by optimizing mitochondrial function.</p>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="benefit-card has-text-centered p-5">
+                        <div class="icon is-large has-text-primary mb-4">
+                            <i class="fas fa-brain fa-3x"></i>
+                        </div>
+                        <h3 class="title is-4">Enhanced Mental Clarity</h3>
+                        <p>Experience laser-sharp focus and improved cognitive function. Say goodbye to brain fog and mental fatigue.</p>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="benefit-card has-text-centered p-5">
+                        <div class="icon is-large has-text-primary mb-4">
+                            <i class="fas fa-heartbeat fa-3x"></i>
+                        </div>
+                        <h3 class="title is-4">Optimal Cellular Health</h3>
+                        <p>Support your body at the cellular level. Mitolyn helps protect and rejuvenate your cells for long-term vitality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section py-6 has-background-light">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered section-title">How Mitolyn Works</h2>
+            <div class="columns is-vcentered">
+                <div class="column is-6">
+                    <div class="steps">
+                        <div class="media mb-5">
+                            <div class="media-left">
+                                <span class="icon is-medium has-background-primary has-text-white" style="border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    <span class="is-size-4 has-text-weight-bold">1</span>
+                                </span>
+                            </div>
+                            <div class="media-content">
+                                <h3 class="title is-4">Optimizes Mitochondrial Function</h3>
+                                <p>Mitolyn activates your body's natural energy production at the cellular level, enhancing mitochondrial efficiency.</p>
+                            </div>
+                        </div>
+                        <div class="media mb-5">
+                            <div class="media-left">
+                                <span class="icon is-medium has-background-primary has-text-white" style="border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    <span class="is-size-4 has-text-weight-bold">2</span>
+                                </span>
+                            </div>
+                            <div class="media-content">
+                                <h3 class="title is-4">Boosts ATP Production</h3>
+                                <p>Increases ATP (cellular energy) production by up to 62%, giving you more energy throughout the day.</p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <span class="icon is-medium has-background-primary has-text-white" style="border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                                    <span class="is-size-4 has-text-weight-bold">3</span>
+                                </span>
+                            </div>
+                            <div class="media-content">
+                                <h3 class="title is-4">Reduces Oxidative Stress</h3>
+                                <p>Powerful antioxidants protect cells from damage and support overall cellular health.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6 has-text-centered">
+                    <img src="https://mitolyn.com/assets/images/3-blank.png" alt="Mitochondrial Function" style="max-height: 350px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section id="ingredients" class="section py-6">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered section-title">Powerful Natural Ingredients</h2>
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="ingredient">
+                        <div class="icon is-large has-text-primary mr-4">
+                            <i class="fas fa-leaf fa-3x"></i>
+                        </div>
+                        <div>
+                            <h3 class="title is-5">Coenzyme Q10</h3>
+                            <p>A vital antioxidant that supports energy production and protects cells from oxidative damage.</p>
+                        </div>
+                    </div>
+                    <div class="ingredient">
+                        <div class="icon is-large has-text-primary mr-4">
+                            <i class="fas fa-seedling fa-3x"></i>
+                        </div>
+                        <div>
+                            <h3 class="title is-5">Alpha-Lipoic Acid</h3>
+                            <p>Enhances mitochondrial function and helps regenerate other antioxidants in the body.</p>
+                        </div>
+                    </div>
+                    <div class="ingredient">
+                        <div class="icon is-large has-text-primary mr-4">
+                            <i class="fas fa-capsules fa-3x"></i>
+                        </div>
+                        <div>
+                            <h3 class="title is-5">Acetyl-L-Carnitine</h3>
+                            <p>Transports fatty acids into mitochondria for energy production and supports cognitive function.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6 has-text-centered">
+                    <img src="https://mitolyn.com/assets/images/1-blank.png" alt="Mitolyn Ingredients" style="max-height: 400px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section py-6 has-background-light">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered section-title">Real People, Real Results</h2>
+            <div class="columns is-multiline">
+                <div class="column is-4">
+                    <div class="testimonial-card">
+                        <div class="media mb-4">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah" class="is-rounded">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-5 mb-0">Sarah J.</p>
+                                <p class="subtitle is-6">Age 42, Teacher</p>
+                            </div>
+                        </div>
+                        <p>"After just 2 weeks of using Mitolyn, my energy levels skyrocketed! I no longer need coffee to get through the day. My students have noticed I'm more engaged and patient too."</p>
+                        <div class="mt-3">
+                            <i class="fas fa-star has-text-warning"></i>
+                            <i class="fas fa-star has-text-warning"></i>
+                            <i class="fas fa-star has-text-warning"></i>
+                            <i class="fas fa-star has-text-warning"></i>
+                            <i class="fas fa-star has-text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="testimonial-card">
+                        <div class="media mb-4">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael" class="is-rounded">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-5 mb-0">Michael R.</p>
+                                <p class="subtitle is-6">Age 54, Executive</p>
+                            </div>
+                        </div>
+                        <p>"As a busy executive, I was constantly fatigued. Mitolyn changed everything. My focus at work has improved dramatically, and I have energy left for my family in the evenings."</p>
+                        <div class="mt-3">
+                            <i class="fas fa-star has-text-warning"></i>
+                            <i class="fas fa-star has-text-warning"></i>
+                            <i class="fas fa-star has-text-warning"></i>
+                            <i class="fas fa-star has-text-warning"></i>
+                            <i class="fas fa-star has-text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="testimonial-card">
+                        <div class="media mb-4">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Jennifer" class="is-rounded">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-5 mb-0">Jennifer L.</p>
+                                <p class="subtitle is-6">Age 38, Fitness Enthusiast</p>
+                            </div>
+                        </div>
+                        <p>"My workouts have transformed since starting Mitolyn. I recover faster, have more endurance, and set new personal records regularly. This is the supplement I've been searching for!"</p>
+                        <div class="mt-3">
+                            <i class="fas fa-star has-text-warning"></i>
+                            <i class="fas fa-star has-text-warning"></i>
+                            <i class="fas fa-star has-text-warning"></i>
+                            <i class="fas fa-star has-text-warning"></i>
+                            <i class="fas fa-star has-text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section py-6">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered section-title">Choose Your Package</h2>
+            
+            <div class="has-text-centered mb-6">
+                <div class="countdown">
+                    <span>Limited Time Offer:</span>
+                    <span class="countdown-number">15</span>:
+                    <span class="countdown-number">23</span>:
+                    <span class="countdown-number">47</span>
+                    <span>remaining</span>
+                </div>
+            </div>
+            
+            <div class="columns is-centered">
+                <div class="column is-4">
+                    <div class="pricing-card has-text-centered p-5">
+                        <img src="https://mitolyn.com/assets/images/1-blank.png" alt="1 Bottle" style="height: 150px; margin: 0 auto;">
+                        <h3 class="title is-4">1 Bottle</h3>
+                        <p class="subtitle is-6">30-Day Supply</p>
+                        <div class="mb-4">
+                            <span class="title is-3">$49</span>
+                            <span class="has-text-grey" style="text-decoration: line-through;">$69</span>
+                        </div>
+                        <ul class="mb-5">
+                            <li class="mb-2">Free Shipping</li>
+                            <li class="mb-2">30-Day Money-Back Guarantee</li>
+                        </ul>
+                        <a href="#" class="btn-secondary">Order Now</a>
+                    </div>
+                </div>
+                
+                <div class="column is-4">
+                    <div class="pricing-card popular has-text-centered p-5">
+                        <img src="https://mitolyn.com/assets/images/3-blank.png" alt="3 Bottles" style="height: 150px; margin: 0 auto;">
+                        <h3 class="title is-4">3 Bottles</h3>
+                        <p class="subtitle is-6">90-Day Supply</p>
+                        <div class="mb-4">
+                            <span class="title is-3">$39</span>
+                            <span class="has-text-grey" style="text-decoration: line-through;">$69</span>
+                            <span class="tag is-danger">Save $90</span>
+                        </div>
+                        <ul class="mb-5">
+                            <li class="mb-2">Free Shipping</li>
+                            <li class="mb-2">2 Free Bonus Guides</li>
+                            <li class="mb-2">90-Day Money-Back Guarantee</li>
+                        </ul>
+                        <a href="#" class="btn-primary">Best Value</a>
+                    </div>
+                </div>
+                
+                <div class="column is-4">
+                    <div class="pricing-card has-text-centered p-5">
+                        <img src="https://mitolyn.com/assets/images/6-blank.png" alt="6 Bottles" style="height: 150px; margin: 0 auto;">
+                        <h3 class="title is-4">6 Bottles</h3>
+                        <p class="subtitle is-6">180-Day Supply</p>
+                        <div class="mb-4">
+                            <span class="title is-3">$33</span>
+                            <span class="has-text-grey" style="text-decoration: line-through;">$69</span>
+                            <span class="tag is-danger">Save $216</span>
+                        </div>
+                        <ul class="mb-5">
+                            <li class="mb-2">Free Shipping</li>
+                            <li class="mb-2">2 Free Bonus Guides</li>
+                            <li class="mb-2">Free VIP Coaching</li>
+                            <li class="mb-2">180-Day Money-Back Guarantee</li>
+                        </ul>
+                        <a href="#" class="btn-secondary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section py-6 has-background-light">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered section-title">Frequently Asked Questions</h2>
+            <div class="content">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How quickly will I see results with Mitolyn?</span>
+                        <span class="icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most customers report feeling increased energy within the first week of consistent use. Optimal results are typically experienced after 2-3 months as your cells regenerate and mitochondrial function improves.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is Mitolyn safe? Are there any side effects?</span>
+                        <span class="icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Mitolyn is made with natural ingredients and is generally well-tolerated. We've formulated it to be free from common allergens and artificial additives. As with any supplement, we recommend consulting with your healthcare provider before use, especially if you have pre-existing medical conditions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I take Mitolyn?</span>
+                        <span class="icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Take two capsules daily with a glass of water, preferably in the morning. For best results, take consistently every day.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is your return policy?</span>
+                        <span class="icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We stand behind Mitolyn with a 90-day money-back guarantee. If you're not completely satisfied with your results, simply return the bottles (even if empty) for a full refund, no questions asked.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you ship internationally?</span>
+                        <span class="icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we ship worldwide. Shipping times vary by location. All orders include tracking information.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section py-6">
+        <div class="container">
+            <div class="cta-section p-6">
+                <div class="columns is-vcentered">
+                    <div class="column is-7">
+                        <h2 class="title is-2 has-text-white">Ready to Transform Your Energy and Vitality?</h2>
+                        <p class="subtitle is-4 has-text-white">Join thousands who have discovered the Mitolyn difference</p>
+                        <ul class="has-text-white mb-5">
+                            <li class="mb-2"><i class="fas fa-check-circle"></i> 90-Day Money-Back Guarantee</li>
+                            <li class="mb-2"><i class="fas fa-check-circle"></i> Free Shipping on All Orders</li>
+                            <li class="mb-2"><i class="fas fa-check-circle"></i> Made in USA, GMP Certified Facility</li>
+                        </ul>
+                    </div>
+                    <div class="column is-5 has-text-centered">
+                        <img src="https://mitolyn.com/assets/images/logo-white.png" alt="Mitolyn" class="mb-4" width="200">
+                        <a href="#pricing" class="btn-primary is-large">Get Mitolyn Now</a>
+                        <p class="mt-3"><small>Limited inventory available - act fast!</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <p class="has-text-white has-text-weight-bold">Special Offer: Save up to 50% + Free Shipping</p>
+                </div>
+                <div class="column has-text-right">
+                    <a href="#pricing" class="btn-primary">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-4">
+                    <img src="https://mitolyn.com/assets/images/logo-white.png" alt="Mitolyn" width="150" class="mb-4">
+                    <p>Mitolyn is a premium supplement designed to optimize cellular energy production and support overall vitality.</p>
+                </div>
+                <div class="column is-2">
+                    <h4 class="title is-5 has-text-white">Quick Links</h4>
+                    <ul>
+                        <li><a href="#benefits" class="has-text-white">Benefits</a></li>
+                        <li><a href="#how-it-works" class="has-text-white">How It Works</a></li>
+                        <li><a href="#ingredients" class="has-text-white">Ingredients</a></li>
+                        <li><a href="#pricing" class="has-text-white">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="column is-3">
+                    <h4 class="title is-5 has-text-white">Support</h4>
+                    <ul>
+                        <li><a href="#faq" class="has-text-white">FAQ</a></li>
+                        <li><a href="#" class="has-text-white">Contact Us</a></li>
+                        <li><a href="#" class="has-text-white">Shipping Policy</a></li>
+                        <li><a href="#" class="has-text-white">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="column is-3">
+                    <h4 class="title is-5 has-text-white">Contact</h4>
+                    <p class="mb-2"><i class="fas fa-envelope mr-2"></i> support@mitolyn.com</p>
+                    <p><i class="fas fa-phone mr-2"></i> 1-800-MITOLYN</p>
+                </div>
+            </div>
+            <hr>
+            <div class="content has-text-centered">
+                <p>&copy; 2023 Mitolyn. All rights reserved.</p>
+                <div class="disclaimer">
+                    <p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Results may vary from person to person.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+            
+            // FAQ accordion
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.closest('.faq-item');
+                    faqItem.classList.toggle('active');
+                });
+            });
+            
+            // Sticky CTA
+            const stickyCta = document.querySelector('.sticky-cta');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    stickyCta.classList.add('visible');
+                } else {
+                    stickyCta.classList.remove('visible');
+                }
+            });
+            
+            // Countdown timer
+            function updateCountdown() {
+                const hoursElement = document.querySelector('.countdown-number:nth-child(2)');
+                const minutesElement = document.querySelector('.countdown-number:nth-child(4)');
+                const secondsElement = document.querySelector('.countdown-number:nth-child(6)');
+                
+                let hours = parseInt(hoursElement.textContent);
+                let minutes = parseInt(minutesElement.textContent);
+                let seconds = parseInt(secondsElement.textContent);
+                
+                seconds--;
+                
+                if (seconds < 0) {
+                    seconds = 59;
+                    minutes--;
+                    
+                    if (minutes < 0) {
+                        minutes = 59;
+                        hours--;
+                        
+                        if (hours < 0) {
+                            hours = 23;
+                        }
+                    }
+                }
+                
+                hoursElement.textContent = hours.toString().padStart(2, '0');
+                minutesElement.textContent = minutes.toString().padStart(2, '0');
+                secondsElement.textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
+</body>
+</html>
