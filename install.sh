@@ -9,11 +9,6 @@ BOOT_DIR="/boot/haos"
 
 echo "🔍 Verificando imagem HAOS..."
 
-if [ ! -f "$IMG" ] && [ ! -f "$IMG_XZ" ]; then
-  echo "🌐 Baixando imagem HAOS..."
-  wget https://release-assets.githubusercontent.com/github-production-release-asset/115992009/c12f33a6-aef4-4cce-b7d6-81db082e66a8?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-10-21T21%3A51%3A09Z&rscd=attachment%3B+filename%3Dhaos_generic-x86-64-16.2.img.xz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2025-10-21T20%3A50%3A38Z&ske=2025-10-21T21%3A51%3A09Z&sks=b&skv=2018-11-09&sig=lDDxGyvTqjkV%2BDmpxe4F%2Fk2kY%2FqYtd8uNLf5qHToFOk%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc2MTA4MzQzOCwibmJmIjoxNzYxMDc5ODM4LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.mlN13_8Ro5VUcs8KiiJfrc_nLHZ9FFe-0pKNIX5laSk&response-content-disposition=attachment%3B%20filename%3Dhaos_generic-x86-64-16.2.img.xz&response-content-type=application%2Foctet-stream
-fi
-
 if [ ! -f "$IMG" ]; then
   echo "📦 Descompactando imagem..."
   xz -d "$IMG_XZ"
