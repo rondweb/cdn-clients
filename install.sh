@@ -11,7 +11,7 @@ echo "🔍 Verificando imagem HAOS..."
 
 if [ ! -f "$IMG" ] && [ ! -f "$IMG_XZ" ]; then
   echo "🌐 Baixando imagem HAOS..."
-  wget https://github.com/home-assistant/operating-system/releases/latest/download/haos_generic-x86-64.img.xz
+  wget https://github.com/home-assistant/operating-system/releases/download/16.2/haos_generic-x86-64-16.2.img.xz
 fi
 
 if [ ! -f "$IMG" ]; then
