@@ -1,29 +1,42 @@
 #!/bin/bash
-
 set -e
 
+IMG_XZ="haos_generic-x86-64.img.xz"
 IMG="haos_generic-x86-64.img"
 TARGET_PART="/dev/sda2"
 MOUNT_POINT="/mnt/haos"
 BOOT_DIR="/boot/haos"
 
-echo "🔍 Verificando imagem..."
+echo "🔍 Verificando imagem HAOS..."
+
+if [ ! -f "$IMG" ] && [ ! -f "$IMG_XZ" ]; then
+  echo "🌐 Baixando imagem HAOS..."
+  wget https://github.com/home-assistant/operating-system/releases/latest/download/haos_generic-x86-64.img.xz
+fi
+
 if [ ! -f "$IMG" ]; then
-  echo "❌ Imagem $IMG não encontrada. Certifique-se de descompactar o .img.xz antes."
+  echo "📦 Descompactando imagem..."
+  xz -d "$IMG_XZ"
+fi
+
+echo "📏 Verificando tamanho da imagem..."
+SIZE=$(du -m "$IMG" | cut -f1)
+if [ "$SIZE" -lt 5000 ]; then
+  echo "❌ Imagem parece incompleta (<5GB). Abortando."
   exit 1
 fi
 
 echo "💾 Gravando imagem em $TARGET_PART..."
 sudo dd if="$IMG" of="$TARGET_PART" bs=4M status=progress conv=fsync
+sync
 
 echo "🔄 Atualizando mapeamentos com kpartx..."
 sudo kpartx -d "$TARGET_PART" || true
 sudo kpartx -av "$TARGET_PART"
-
-echo "⏳ Aguardando dispositivos /dev/mapper..."
 sleep 2
 
 echo "🔍 Buscando partição com kernel/initrd..."
+FOUND=""
 for i in $(ls /dev/mapper | grep "$(basename $TARGET_PART)p"); do
   echo "📦 Testando /dev/mapper/$i..."
   sudo mkdir -p "$MOUNT_POINT"
